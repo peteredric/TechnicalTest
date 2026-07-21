@@ -33,7 +33,7 @@ Install the following before running the application:
 * npm
 * PostgreSQL
 * Git
-* pgAdmin (optional, makes installing the database much easier)
+* pgAdmin (optional, makes creating the database much easier)
 
 Check your Node.js and npm versions:
 
