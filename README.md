@@ -265,6 +265,8 @@ The application displays a table containing the current master stock data.
 
 The table can be refreshed to retrieve the latest stock information from the backend.
 
+<img width="1262" height="947" alt="image" src="https://github.com/user-attachments/assets/c33ac22e-7344-47ca-a0df-abad6b0a5421" />
+
 ---
 
 ## Create Stock
@@ -276,6 +278,8 @@ Create a new master stock item with information such as:
 * Satuan Pembelian
 * Satuan Penjualan
 * Konversi
+
+<img width="1916" height="948" alt="image" src="https://github.com/user-attachments/assets/a02bc515-e42a-4692-9f33-a5fd6933322f" />
 
 ---
 
@@ -302,6 +306,8 @@ After a successful transaction:
 4. The form is cleared.
 5. A success notification is displayed.
 
+<img width="1917" height="944" alt="image" src="https://github.com/user-attachments/assets/13820257-5c92-4d88-b43a-07779617702e" />
+
 ---
 
 ## Cancel Transaction
@@ -309,6 +315,8 @@ After a successful transaction:
 Cancel an existing stock transaction. Input the `Nomor Transaksi` field to cancel that transaction.
 
 The stock quantity will be adjusted according to the cancelled transaction.
+
+<img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/dd42b522-811a-4b42-b71a-a35112edfc50" />
 
 ---
 
