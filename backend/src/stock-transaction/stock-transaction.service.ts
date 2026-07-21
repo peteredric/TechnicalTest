@@ -107,7 +107,7 @@ export class StockTransactionService {
           // running number should be fetched from the DateRunningNumber table
           // check if the currently generated sku already exist, if yes, retry
           dateRunningNumber.running_number++;
-          noTransaksi = `STK/${kombinasi_tanggal}/${dateRunningNumber.running_number}`;
+          noTransaksi = `STK/${kombinasi_tanggal}/${String(dateRunningNumber.running_number).padStart(5, '0')}`;
           foundUnique = await manager.existsBy(MasterTransaction, {
             nomor_transaksi: noTransaksi,
           });
@@ -151,7 +151,7 @@ export class StockTransactionService {
         }
       }
 
-      // finally, update master stock so it increases by the quantity,
+      // Finally, update master stock so it increases by the quantity,
       // and also update quantity penjualan based on conversion value from konversi
       const updatedMasterStock = await manager.findOne(MasterStock, {
         where: { sku: addMasterStockDto.sku },

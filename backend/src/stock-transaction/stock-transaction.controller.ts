@@ -28,25 +28,32 @@ export class StockTransactionController {
   @Post('/create-master-stock')
   async createMasterStock(
     @Body() createMasterDataDto: CreateMasterStockDto,
-  ): Promise<string> {
+  ): Promise<{ message: string }> {
     await this.stockTransactionService.createMasterStock(createMasterDataDto);
-    return `Create Master Stock Berhasil`;
+    return {
+      message: 'Create Master Stock berhasil',
+    };
   }
 
   @Post('/add-transaction')
   async addTransaction(
     @Body() addMasterDataDto: AddMasterStockDto,
-  ): Promise<string> {
-    await this.stockTransactionService.addMasterStock(addMasterDataDto);
-    return `Transaksi Penambahan Master Stock Berhasil`;
+  ): Promise<{ message: string }> {
+    const transaksi =
+      await this.stockTransactionService.addMasterStock(addMasterDataDto);
+    return {
+      message: `Transaksi dengan nomor ${transaksi.nomor_transaksi} berhasil dibuat.`,
+    };
   }
 
   @Post('/cancel-transaction')
   async cancelTransaction(
     @Body() cancelTransactionDto: CancelTransationDto,
-  ): Promise<string> {
+  ): Promise<{ message: string }> {
     await this.stockTransactionService.cancelTransaction(cancelTransactionDto);
-    return `Cancel Transaksi Master Stock Berhasil`;
+    return {
+      message: `Transaksi dengan nomor ${cancelTransactionDto.nomor_transaksi} telah di-cancel.`,
+    };
   }
 
   @Get('/master-stock')

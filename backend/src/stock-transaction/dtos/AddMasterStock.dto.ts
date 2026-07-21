@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, Matches } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, Matches, Min } from 'class-validator';
 
 export class AddMasterStockDto {
   @IsString({ message: 'Nomor Transaksi Manual harus dalam format text' })
@@ -16,6 +16,7 @@ export class AddMasterStockDto {
 
   @IsNotEmpty({ message: 'Quantity barang tidak boleh kosong' })
   @IsNumber({}, { message: 'Quantity barang harus dalam format text' })
+  @Min(0.01, { message: `Quantity barang harus diatas 0.01` })
   quantity!: number;
 
   @IsString({ message: 'Keterangan harus dalam format text' })
